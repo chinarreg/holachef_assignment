@@ -1,0 +1,12 @@
+=> [32m#<Order:0x007f0a6d759300[0m
+ id: [1;36mnil[0m,
+ time: [1;36mnil[0m,
+ address_id: [1;36mnil[0m,
+ food_item_id: [1;34m1[0m,
+ pay_type: [1;34m0[0m,
+ user_id: [1;36mnil[0m,
+ status: [32m"pending"[0m[0m,
+ delivery_boy_id: [1;36mnil[0m,
+ amount: [1;36mnil[0m,
+ created_at: [1;36mnil[0m,
+ updated_at: [1;36mnil[0m[32m>[0m

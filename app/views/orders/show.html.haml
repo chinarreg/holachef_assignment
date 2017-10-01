@@ -1,0 +1,10 @@
+%h1 
+  Order id: #{@order.id}
+%p
+  Order status: #{@order.status}
+
+- if @order.delivery_boy.present?
+  %p Delivered executive: #{@order.delivery_boy.name} (mobile no.: #{@order.delivery_boy.mobile})
+- else
+  %p Delivery executive not assigned yet.
+    

@@ -6,15 +6,15 @@
         - @food_items.each do |food_item|
           .col-sm-4.col-lg-4.col-md-4
             .thumbnail
-              %img{:alt => "", :src => food_item.image.url}/
+              // %img{:alt => "", :src => food_item.image.url}/
               .caption
                 %h4.pull-right 
-                  ₹ #{food_item.amount}
+                  ₹ #{food_item.price}
                 %h4
-                  %a{:href => "#"} 
+                  %a{:href => new_order_path(:food_item_id => food_item.id)} 
                     = food_item.name
                 %p 
-                  = food_item.description
+                  = food_item.localities.pluck(:name).join(', ')
 / /.container
 .container
   %hr/
