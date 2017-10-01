@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  locality_id: 1
+  user_id: 1
+  address_line_1: MyText
+  address_line_2: MyText
+
+two:
+  locality_id: 1
+  user_id: 1
+  address_line_1: MyText
+  address_line_2: MyText

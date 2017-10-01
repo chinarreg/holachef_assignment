@@ -1,0 +1,15 @@
+= form_for(@order) do |f|
+  .form-group
+    = f.label :amount
+    %br
+    = f.text_field :amount, class: 'form-control', placeholder: 'Enter amount (USD)...'
+  .form-group
+    = f.label :date
+    %br
+    = f.text_field :date, class: 'form-control datepicker', placeholder: 'Enter date...', data: {provide: 'datepicker', "date-format": "yyyy-dd-mm"}
+  .form-group
+    = f.label :invoice_id
+    %br
+    = f.select :invoice_id, options_for_select(Invoice.all.map{|s| s.id}), {:class=>'form-control'}
+  .actions.form-group
+    = f.submit 'Save', :class => 'btn btn-lg btn-success btn-block'

@@ -10,10 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171001131718) do
+ActiveRecord::Schema.define(version: 20171001162938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer "locality_id"
+    t.integer "user_id"
+    t.string "name"
+    t.string "mobile"
+    t.text "address_line_1"
+    t.text "address_line_2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "delivery_boys", force: :cascade do |t|
+    t.string "name"
+    t.string "mobile"
+    t.integer "locality_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "food_items", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "food_items_localities", id: false, force: :cascade do |t|
+    t.bigint "locality_id", null: false
+    t.bigint "food_item_id", null: false
+  end
+
+  create_table "localities", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.float "time"
+    t.integer "address_id"
+    t.integer "food_item_id"
+    t.integer "payment_method_id"
+    t.integer "user_id"
+    t.integer "status"
+    t.integer "delivery_boy_id"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "time_slots", force: :cascade do |t|
+    t.integer "delivery_boy_id"
+    t.float "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
